@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioNature | Guía de Conexión Natural</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,400;1,500;1,600;1,700&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-crema: rgb(242, 231, 195);
+            --white: rgb(252, 247, 230);
+            --green-leaf: #3d5a36;
+            --green-lima: #cfe39e;
+            --brown-bark: #4e342e;
+            --sky-blue: rgb(205, 226, 248);
+            --stone-cinnamon: #c7a48d;
+            --text-gray: #333;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+
+
+
+
+
+
+
+
+
+/* Contenedor principal que organiza las columnas */
+    .contenedor-columnas {
+        display: grid;
+        /* Define 3 columnas de igual ancho. Puedes cambiar a 2 o 4 según prefieras */
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 20px; /* Espacio entre las columnas */
+        padding: 0px;
+        background-color: var(--white);
+        border-radius: 15px;
+        margin: 20px auto;
+        max-width: 1200px;
+    }
+
+    /* Cada columna individual */
+    .columna-individual {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Subtítulos alineados a la izquierda */
+    .subtitulo-columna {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 22px;
+        color: var(--green-leaf);
+        margin-bottom: 15px;
+        text-align: left;
+        line-height: 1.2;
+    }
+
+    /* Texto justificado dentro de la columna */
+    .texto-columna {
+        font-size: 14px;
+        text-align: justify;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        color: var(--text-gray);
+    }
+
+    /* Imagen debajo de cada texto */
+    .foto-footer-columna {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-top: auto; /* Empuja la imagen al final si los textos tienen distinto largo */
+    }
+
+    /* Adaptación para móviles: las columnas se apilan una sobre otra */
+    @media (max-width: 800px) {
+        .contenedor-columnas {
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-crema);
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+        
+        nav {
+            background: var(--white);
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { font-family: 'Dancing Script', cursive; color: var(--green-leaf); font-size: 32px; font-weight: 700; }
+        .nav-links { display: flex; list-style: none; gap: 25px; }
+        .nav-links a { text-decoration: none; color: var(--text-gray); font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+        .hero-banner {
+            width: 100%;
+            height: 450px;
+            background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .main-wrapper {
+            max-width: 1200px;
+            margin: -50px auto 40px;
+            background: var(--white);
+            border-radius: 15px;
+            display: flex;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .content-area { flex: 2; padding: 60px 80px; }
+
+        .post-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 56px;
+            font-weight: 700;
+            color:rgb(83, 93, 67);;
+            margin-bottom: 30px;
+            line-height: 1.1;
+        }
+
+        .image-caption {
+            font-size: 13px;
+            color: #777;
+            font-style: italic;
+            margin-bottom: 25px;
+            text-align: center;
+            display: block;s
+        }
+
+        .content-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 20px 0 10px;
+        }
+
+        /* --- SISTEMA FLEXIBLE INDIVIDUAL --- */
+        .contenedor-flexible {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        /* Agregando esta clase puedes mover la imagen a la derecha individualmente */
+        .derecha {
+            flex-direction: row-reverse;
+        }
+
+        .imagen-lado {
+            width: 50%;
+            border-radius: 12px;
+            height: 370px;
+            object-fit: cover;
+            margin-bottom: -60px;
+        }
+
+        .texto-lado {
+            width: 50%;
+            text-align: justify;
+        }
+
+        .intro-quote {
+            font-size: 1.3rem;
+            color: var(--green-leaf);
+            border-left: 6px solid var(--green-lima);
+            padding-left: 25px;
+            margin: 40px 0;
+            font-weight: 300;
+        }
+
+        h2 { 
+            font-family: 'Cormorant Garamond', serif; 
+            font-style: italic; 
+            color: rgb(198, 171, 156);; 
+            margin: 50px 0 20px; 
+            font-size: 36px; 
+            font-weight: 600;
+        }
+
+        h3 { 
+            font-family: 'Cormorant Garamond', serif; 
+            font-style: italic; 
+            color: rgb(0, 0, 0);; 
+            margin-top: 35px; 
+            font-size: 28px; 
+            font-weight: 500;
+        }
+
+         h4 { 
+            font-family: 'Cormorant Garamond', serif; 
+            font-style: italic; 
+            color: rgb(158, 51, 31);; 
+            margin-top: 35px; 
+            font-size: 28px; 
+            font-weight: 500;
+        }
+
+        .sidebar { flex: 1; padding: 60px 40px; background: rgb(244, 236, 211); border-left: 1px solid #eee; }
+        .side-card { background: var(--white); padding: 25px; border-radius: 12px; margin-bottom: 35px; border: 1px solid #f0f0f0; }
+        .btn-accent { background: var(--stone-cinnamon); color: white; padding: 14px 30px; border-radius: 30px; text-decoration: none; display: block; text-align: center; font-weight: 600; margin-top: 20px; }
+
+        footer { background: var(--green-leaf); color: white; padding: 60px 10%; display: flex; justify-content: space-between; gap: 40px; }
+        .footer-col { flex: 1; }
+
+        @media (max-width: 1024px) {
+            .main-wrapper { flex-direction: column; margin: 0; }
+            .content-area { padding: 40px; }
+            .contenedor-flexible, .derecha { flex-direction: column; }
+            .imagen-lado, .texto-lado { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">BioNature</div>
+        <ul class="nav-links">
+            <li><a href="#">Mindfulness</a></li>
+            <li><a href="#">Grounding</a></li>
+            <li><a href="#">Biofilia</a></li>
+            <li><a href="#">Tienda Natural</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero-banner"></div>
+
+    <div class="main-wrapper">
+        <article class="content-area">
+            <h1 class="post-title":>Paz entre los árboles</h1>
+            
+            <p class="intro-quote">
+                "El hogar no solo es lugar donde "estar", sino un ecosistema que regule el pulso y la respiración como un bosque."
+            </p>
+
+            <h2>¿Por que un árbol nos calma? La ciencia tras la geometria y color de la hoja, y el aroma de la madera.</h2>
+            <p>Es el punto donde el diseño interior deja de ser decorativo para volverse terapéutico. La idea es que el hogar no sea un espacio inerte, sino un organismo vivo que utiliza códigos biológicos (geometría, luz y química) para "hackear" positivamente nuestro cerebro y devolvernos el equilibrio que el entorno urbano nos quita.</p>
+            
+            <img src="1.jpeg" class="content-img" alt="Corteza de árbol">
+            <span class="image-caption">Imagen 1: La fuerza táctil de la corteza antigua.</span>
+
+            <div class="contenedor-flexible">
+                <img src="2.jpeg" alt="Geometría fractal" class="imagen-lado">
+                <div class="texto-lado">
+                    <h3>La Geometría de las Hojas</h3>
+                    <p>La paz que sentimos al mirar un árbol no es subjetiva, es matemática. Las hojas siguen patrones de geometría fractal (estructuras que se repiten a diferentes escalas). El cerebro humano procesa fractales naturales con un esfuerzo mínimo. Al introducir estos patrones en el hogar, bajamos la frecuencia de nuestras ondas cerebrales de alerta a relajación.</p>
+                </div>
+            </div>
+
+            <div class="contenedor-flexible derecha">
+                <img src="3.jpeg" alt="Ciencia del color" class="imagen-lado">
+                <div class="texto-lado">
+                    <h3>La ciencia del color</h3>
+                    <p>Imagina que tu ojo es un músculo que trabaja todo el día. El rojo lo obliga a tensarse y el azul a esforzarse por enfocar. El verde, en cambio, es el color que el ojo procesa con mayor facilidad. Al decorar con verdes, le estás dando a tus ojos un "asiento cómodo" donde descansar. Evolutivamente, nuestro cerebro asocia el verde con la vida y el agua.</p>
+                </div>
+            </div>
+
+             <div class="contenedor-flexible">
+                <img src="4.jpeg" alt="Geometría fractal" class="imagen-lado">
+                <div class="texto-lado">
+                    <h3>El aroma de la madera</h3>
+                    <p>La paz de los árboles entra en casa a través del olfato. El aroma de la madera natural es la 'capa invisible' de nuestro diseño; una fragancia que no se compra en frascos, sino que emana de los materiales nobles. Inhalar el perfume del cedro o del roble es una señal directa para que nuestro cerebro se relaje, recordándonos que estamos en un lugar seguro, orgánico y vivo.</p>
+                </div>
+            </div>
+      
+            <h2>Minimalismo orgánico</h2>
+            <p>El Minimalismo Orgánico es el arte de quedarse con lo esencial, pero asegurándose de que ese "poco" sea natural y táctil. No se trata de tener una casa vacía, sino de tener una casa llena de texturas que inviten a ser tocadas. Es un estilo que prioriza el bienestar emocional sobre la perfección estética.</p>
+
+                      <img src="5.jpeg" class="content-img" alt="Corteza de árbol">
+            <span class="image-caption">Imagen 1: La fuerza táctil de la corteza antigua.</span>
+
+             <div class="contenedor-flexible derecha">
+                <img src="6.jpeg" alt="Ciencia del color" class="imagen-lado">
+                <div class="texto-lado">
+            <h3>Adiós a las líneas rectas</h3>
+            <p>En la naturaleza no existen las líneas rectas perfectas. En lugar de muebles con esquinas filosas, el minimalismo orgánico prefiere mesas de bordes redondeados, sofás curvos y siluetas que imitan la fluidez de una piedra de río o la rama de un árbol. Estas formas son visualmente más suaves y menos agresivas para el cerebro.</p>
+             </div>
+            </div>
+
+            <div class="contenedor-flexible">
+                <img src="7.jpeg" alt="Geometría fractal" class="imagen-lado">
+                <div class="texto-lado">
+            <h3>Honestidad táctil</h3>
+            <p>La base de este estilo es la materia prima en su estado más puro. Madera con vetas y nudos visibles, lino arrugado, cerámica hecha a mano, piedra caliza y fibras vegetales (mimbre, yute). La "decoración" no es un objeto extra, sino la belleza del material mismo permitiendo que la naturaleza hable dentro del hogar.</p>
+            </div>
+            </div>
+
+            <div class="contenedor-flexible derecha">
+                <img src="8.jpeg" alt="Ciencia del color" class="imagen-lado">
+                <div class="texto-lado">
+            <h3>Vivir con lo que respiras</h3>
+            <p>A diferencia del minimalismo industrial, aquí la vegetación es un elemento estructural, no un accesorio. Una sola planta de gran porte en una esquina tiene más impacto que diez adornos pequeños. Se busca que el espacio se sienta "aireado", permitiendo que la luz y el aire circulen como si estuviéramos en un claro del bosque.</p>
+             </div>
+            </div>
+
+            <h2>La piel del hogar</h2>
+            <p>La piel del hogar debe ser una invitación al tacto. El objetivo es sustituir las superficies frías y sintéticas por materiales que tengan una historia orgánica. Cuando nuestra piel entra en contacto con fibras naturales, el sistema nervioso recibe una señal de relajación inmediata.</p>
+            
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+            <div class="contenedor-columnas">
+    
+    <div class="columna-individual">
+        <h3 class="subtitulo-columna">Maderas de Poro Abierto</h3>
+        <p class="texto-columna">
+            Para que la madera "respire" y mantenga su aroma, evitamos los barnices plásticos y brillantes. Preferimos aceites y ceras que permitan sentir la veta y el relieve natural. Aporta una calidez que estabiliza el pulso.
+        </p>
+        <img src="9.jpeg" class="foto-footer-columna" alt="Madera natural">
+    </div>
+
+    <div class="columna-individual">
+        <h3 class="subtitulo-columna">Textiles con Memoria</h3>
+        <p class="texto-columna">
+            El lino y el algodón crudo son los encargados de suavizar las aristas. Al ser tejidos que "arrugan" con naturalidad, nos enseñan a aceptar la imperfección orgánica, eliminando la rigidez del minimalismo tradicional.
+        </p>
+        <img src="10.jpeg" class="foto-footer-columna" alt="Textiles orgánicos">
+    </div>
+
+    <div class="columna-individual">
+        <h3 class="subtitulo-columna">Piedra y Barro</h3>
+        <p class="texto-columna">
+            Son los elementos que nos anclan a la tierra. Una pared de piedra caliza o una pieza de cerámica artesanal introducen una temperatura y una solidez que nos hacen sentir protegidos, como si las paredes fueran una extensión de la montaña.
+        </p>
+        <img src="11.jpeg" class="foto-footer-columna" alt="Cerámica y piedra">
+    </div>
+
+</div>
+
+
+
+
+
+
+            <h2>Esculpir con luz</h2>
+            <p>Busca lámparas que desaparezcan en el espacio o que parezcan objetos naturales:</p>
+            
+            <div class="contenedor-columnas">
+    
+    <div class="columna-individual">
+        <h3 class="subtitulo-columna">Luz "Bañado de Pared" (Wall Washers):</h3>
+        <p class="texto-columna">
+            Son focos que se dirigen hacia la pared, no hacia el suelo. Ideales para resaltar la textura de una pared de piedra o madera.
+        </p>
+        <img src="12.jpeg" class="foto-footer-columna" alt="Madera natural">
+    </div>
+
+    <div class="columna-individual">
+        <h3 class="subtitulo-columna">Lámparas de Pie de Arco o Fibras:</h3>
+        <p class="texto-columna">
+              Con pantallas de ratán, mimbre o papel. Al encenderlas, el trenzado proyecta sombras que imitan el movimiento de las ramas.        </p>
+        <img src="13.jpeg" class="foto-footer-columna" alt="Textiles orgánicos">
+    </div>
+
+    <div class="columna-individual">
+        <h3 class="subtitulo-columna">Tiras LED Cálidas (Ocultas):</h3>
+        <p class="texto-columna">
+            Colocadas detrás de un cabecero, bajo un estante de madera o en el zócalo del suelo para crear un "aura" de luz que parece emanar del material.
+        </p>
+        <img src="14.jpeg" class="foto-footer-columna" alt="Cerámica y piedra">
+    </div>
+
+</div>          
+            <div style="background: var(--bg-crema); padding: 40px; border-radius: 15px; margin-top: 50px; border: 2px solid var(--green-lima);">
+                <h3 style="margin-top: 0;">Diseñar para vivir, diseñar para estar bien</h3>
+                <p>En este primer número hemos aprendido que la naturaleza es nuestra mejor guía. Al final del día, lo más valioso de un hogar no es cómo se ve, sino cómo te hace sentir. Porque tu bienestar es muy importante para nosotros, te invitamos a que cada cambio en tu casa sea un paso hacia una vida más lenta, más orgánica y más feliz.</p>
+                <a href="#" class="btn-accent" style="width: auto; display: inline-block;">Unirme a la Comunidad</a>
+            </div>
+        </article>
+
+        <aside class="sidebar">
+            <div class="side-card">
+                <h3>Proximo blog</h3>
+                <p><strong>El "No-Color" CLOUD DANCER</strong> 
+            </div>
+
+            <div class="side-card" style="background: var(--sky-blue); border: none;">
+                <h3 style="color: #2c3e50;">Guía Gratis de Grounding</h3>
+                <p>Descarga nuestro PDF con los 7 puntos clave para empezar tu práctica hoy mismo.</p>
+                <a href="#" class="btn-accent" style="background: #2c3e50;">Descargar Ahora</a>
+            </div>
+
+            <div class="side-card">
+                <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=400&q=80" style="width:100%; border-radius: 8px; margin-bottom: 15px;" alt="Textura macro">
+                <h4>Texturas del Alma</h4> 
+                <p>Un viaje sensorial a través de la fotografía macro natural.</p>
+            </div>
+
+              <div class="side-card">
+                <img src="https://i.pinimg.com/originals/64/71/9a/64719a24789599dbe23dec99c0c79e1d.gif" style="width:100%; border-radius: 8px; margin-bottom: 15px;" alt="Textura macro">
+                <h4>Naturaleza Animada</h4>
+                <p>Lugar de Misterios e Historias Por Contar</p>
+</div>
+
+                  <div class="side-card">
+                <img src="15.jpg" style="width:100%; border-radius: 8px; margin-bottom: 15px;" alt="Textura macro">
+                <h4>Mas alla de la Naturaleza</h4>
+                <p>Mundo Oculto Detras de lo Desconocido.</p>
+            </div>
+
+              <div class="side-card">
+                <img src="16.jpg" style="width:100%; border-radius: 8px; margin-bottom: 15px;" alt="Textura macro">
+                <h4>Horizontes Infinitos</h4>
+                <p>El Arte de Pausar frente al Océano</p>
+            </div>
+
+  <div class="side-card">
+                <img src="17.jpeg" style="width:100%; border-radius: 8px; margin-bottom: 15px;" alt="Textura macro">
+                <h4>Pausa Organica</h4>
+                <p>Un Recorrido Por Texturas Naturales.</p>
+            </div>
+
+  <div class="side-card">
+                <img src="18.jpg" style="width:100%; border-radius: 8px; margin-bottom: 15px;" alt="Textura macro">
+                <h4>Silencio Cromatico</h4>
+                <p>Un Refugio Bajo el Cielo.</p>
+            </div>
+
+
+  <div class="side-card">
+                <img src="19.jpeg" style="width:100%; border-radius: 8px; margin-bottom: 15px;" alt="Textura macro">
+                <h4>Restaurantes Biofilico </h4>
+                <p>Ambientes que parecen bosques.</p>
+            </div>
+
+  <div class="side-card">
+                <img src="20.jpeg" style="width:100%; border-radius: 8px; margin-bottom: 15px;" alt="Textura macro">
+                <h4>Naturaleza Urbana</h4>
+                <p>Centro comerciales donde se siente la paz.</p>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-col">
+            <h3>Concepto Central</h3>
+            <p>Paz entre los árboles: Una guía para el bienestar a través del contacto sensorial con el bosque.</p>
+        </div>
+        <div class="footer-col">
+            <h3>Paleta Sensorial</h3>
+            <p>Verde oliva, Marrón corteza, Beige suave y Azul cielo.</p>
+        </div>
+        <div class="footer-col">
+            <h3>Contacto</h3>
+            <p>Email: JormaliCevallos@gmail.com<br>Año: 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>
